@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Yii2-jquery-tagsinput by Faryshta</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Yii2-jquery-tagsinput</h1>
+          <h2>Yii2 widgets for https://github.com/xoxco/jQuery-Tags-Input (tag list) jquery plugin</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/Faryshta/yii2-jquery-tagsinput/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/Faryshta/yii2-jquery-tagsinput/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/Faryshta/yii2-jquery-tagsinput" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="faryshta-yii2-jquery-tags-input" class="anchor" href="#faryshta-yii2-jquery-tags-input" aria-hidden="true"><span class="octicon octicon-link"></span></a>Faryshta Yii2 jQuery Tags Input</h1>
+
+<p><a href="https://packagist.org/packages/faryshta/yii2-jquery-tagsinput"><img src="https://poser.pugx.org/faryshta/yii2-jquery-tagsinput/v/stable" alt="Latest Stable Version"></a> <a href="https://packagist.org/packages/faryshta/yii2-jquery-tagsinput"><img src="https://poser.pugx.org/faryshta/yii2-jquery-tagsinput/downloads" alt="Total Downloads"></a> <a href="https://packagist.org/packages/faryshta/yii2-jquery-tagsinputr"><img src="https://poser.pugx.org/faryshta/yii2-jquery-tagsinput/v/unstable" alt="Latest Unstable Version"></a> <a href="https://packagist.org/packages/faryshta/yii2-jquery-tagsinput"><img src="https://poser.pugx.org/faryshta/yii2-jquery-tagsinput/license" alt="License"></a></p>
+
+<p>Yii2 widgets for <a href="https://github.com/xoxco/jQuery-Tags-Input">jQuery Tags Input</a>
+(tag list) jquery plugin</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>The preferred way to install this extension is through <a href="http://getcomposer.org/download/">composer</a>.</p>
+
+<p>Either run</p>
+
+<div class="highlight highlight-source-shell"><pre>composer require --prefer-dist <span class="pl-s"><span class="pl-pds">"</span>faryshta/yii2-jquery-tagsinput:*<span class="pl-pds">"</span></span></pre></div>
+
+<p>or add</p>
+
+<pre><code>"faryshta/yii2-jquery-tagsinput": "*"
+</code></pre>
+
+<p>to the <code>require</code> section of your <code>composer.json</code> file.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">farystha\widgets\JqueryTagsInput</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// with ActiveForm</span></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$form</span><span class="pl-k">-&gt;</span>field(<span class="pl-smi">$model</span>, <span class="pl-s"><span class="pl-pds">'</span>attribute<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>widget(<span class="pl-c1">JqueryTagsInput</span><span class="pl-k">::</span>className() [</span>
+<span class="pl-s1">    <span class="pl-c">// extra configuration</span></span>
+<span class="pl-s1">]);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// without ActiveForm and with model.</span></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-c1">JqueryTagsInput</span><span class="pl-k">::</span>widget([</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>model<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-smi">$model</span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>attribute<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>attribute<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    <span class="pl-c">// extra configuration</span></span>
+<span class="pl-s1">]);</span></pre></div>
+
+<h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h2>
+
+<p>This library doesn't define anything new, the widgets classes are very similar
+to the class <a href="http://www.yiiframework.com/doc-2.0/yii-bootstrap-widget.html">\yii\bootstrap\Widget</a> which can be used as documentation for the widget classes.</p>
+
+<p>The JS options can be passed using the <code>$clientOptions</code> property and the events
+can be declared using the <code>$clientEvents</code> property. <a href="http://xoxco.com/projects/code/tagsinput/">The documentation on all the
+options and events supported by tagsInput can be found here.</a></p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>The BSD License (BSD). Please see <a href="LICENSE.md">License File</a> for more information.</p>
+        </section>
+
+        <footer>
+          Yii2-jquery-tagsinput is maintained by <a href="https://github.com/Faryshta">Faryshta</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>

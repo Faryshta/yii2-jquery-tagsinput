@@ -9,8 +9,23 @@ use yii\web\AssetBundle;
  */
 class JqueryTagsInput extends AssetBundle
 {
+    /**
+     * @inheritdoc
+     */
     public $sourcePath = '@bower/jquery.tagsinput';
+
+    /**
+     * @inheritdoc
+     */
     public $js = ['jquery.tagsinput.js'];
+
+    /**
+     * @inheritdoc
+     */
     public $css = ['jquery.tagsinput.css'];
+
+    /**
+     * @inheritdoc
+     */
     public $depends = ['yii\web\JqueryAsset'];
 }

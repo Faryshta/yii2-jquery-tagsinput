@@ -3,10 +3,9 @@
 namespace faryshta\widgets;
 
 use yii\helpers\Html;
-use yii\helpers\ArrayHelper;
-use yii\widgets\InputWidget;
 use yii\helpers\Json;
-
+use yii\base\InvalidConfigException;
+use yii\widgets\InputWidget;
 use faryshta\assets\JqueryTagsInput as JqueryTagsAsset;
 
 /**
@@ -55,6 +54,17 @@ class JqueryTagsInput extends InputWidget
     public function registerScript()
     {
         $view = $this->getView();
+        if (isset($this->clientOptions['autocomplete_url'])) {
+            if (class_exists('yii\jui\AutoComplete')) {
+                \yii\jui\AutoComplete::register($view);
+            } else {
+                throw new InvalidConfigException(
+                    'To use autocomplete functionality you need to install the '
+                    . ' JUI Extension for Yii 2. '
+                    . 'http://www.yiiframework.com/doc-2.0/ext-jui-index.html'
+                );
+            }
+        }
         $clientOptions = empty($this->clientOptions)
             ? ''
             : Json::encode($this->clientOptions);

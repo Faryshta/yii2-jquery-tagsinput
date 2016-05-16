@@ -9,6 +9,31 @@ use yii\widgets\InputWidget;
 use faryshta\assets\JqueryTagsInput as JqueryTagsAsset;
 
 /**
+ * Renders a jQuery Tags Input widget.
+ *
+ * For example to use the widget with a  model:
+ *
+ * ````php
+ * echo JqueryTagsInput::widget([
+ *     'name'  => 'tags',
+ *     'value'  => 'hello,world',
+ *     'clientOptions' => [
+ *         'defaultText' => 'custom placeholder',
+ *     ],
+ * ]);
+ * ```
+ *
+ * You can also use this widget in an `ActiveForm` using the
+ * `ActiveField::widget()`method, for example like this:
+ *
+ * ```php
+ * <?= $form->field($model, 'tags')->widget(JqueryTagsInput::classname(), [
+ *     'clientOptions' => [
+ *         'defaultText' => 'custom placeholder',
+ *     ],
+ * ]) ?>
+ * ```
+ *
  * @author Angel (Faryshta) Guevara <angeldelcaos@gmail.com>
  */
 class JqueryTagsInput extends InputWidget
@@ -18,7 +43,17 @@ class JqueryTagsInput extends InputWidget
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
     public $options = ['class' => 'form-control'];
+
+    /**
+     * @var array options to be passed to he js plugin.
+     * @see https://github.com/xoxco/jQuery-Tags-Input#options
+     */
     public $clientOptions = [];
+
+    /**
+     * @var array the event handlers for the underlying jquery plugin.
+     * @see https://github.com/xoxco/jQuery-Tags-Input#options
+     */
     public $clientEvents = [];
 
     /**
@@ -50,8 +85,11 @@ class JqueryTagsInput extends InputWidget
         $this->registerEvent();
     }
 
-
-    public function registerScript()
+    /**
+     * Register the js scripts including the required assets and the options in
+     * `$clientOptions`
+     */
+    protected function registerScript()
     {
         $view = $this->getView();
         if (isset($this->clientOptions['autocomplete_url'])) {
@@ -75,7 +113,10 @@ class JqueryTagsInput extends InputWidget
         );
     }
 
-    public function registerEvent()
+    /**
+     * Register the events in `$clientEvents`
+     */
+    protected function registerEvent()
     {
         if (empty($this->clientEvents)) {
             return;

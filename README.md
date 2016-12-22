@@ -30,7 +30,7 @@ to the `require` section of your `composer.json` file.
 use faryshta\widgets\JqueryTagsInput;
 
 // with ActiveForm
-echo $form->field($model, 'attribute')->widget(JqueryTagsInput::className() [
+echo $form->field($model, 'attribute')->widget(JqueryTagsInput::className(), [
     // extra configuration
 ]);
 

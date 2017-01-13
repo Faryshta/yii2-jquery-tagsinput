@@ -93,8 +93,8 @@ class JqueryTagsInput extends InputWidget
     {
         $view = $this->getView();
         if (isset($this->clientOptions['autocomplete_url'])) {
-            if (class_exists('yii\jui\AutoComplete')) {
-                \yii\jui\AutoComplete::register($view);
+            if (class_exists('yii\jui\JuiAsset')) {
+                \yii\jui\JuiAsset::register($view);            
             } else {
                 throw new InvalidConfigException(
                     'To use autocomplete functionality you need to install the '

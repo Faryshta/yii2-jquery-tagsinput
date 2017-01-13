@@ -27,10 +27,10 @@ to the `require` section of your `composer.json` file.
 ## Usage
 
 ```php
-use farystha\widgets\JqueryTagsInput;
+use faryshta\widgets\JqueryTagsInput;
 
 // with ActiveForm
-echo $form->field($model, 'attribute')->widget(JqueryTagsInput::className() [
+echo $form->field($model, 'attribute')->widget(JqueryTagsInput::className(), [
     // extra configuration
 ]);
 
